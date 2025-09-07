@@ -16,12 +16,24 @@
 </head>
 <body class="p-4 sm:p-8 md:p-12">
 
-    <div class="max-w-4xl mx-auto">
-        <header class="text-center mb-12">
-            <h1 class="text-3xl sm:text-4xl font-bold mb-2 text-gray-800">The AI Universe Alpha Directory</h1>
-            <p class="text-gray-600">A curated and searchable collection of top AI applications and tools.</p>
+    <!-- Custom Banner -->
+    <div class="max-w-4xl mx-auto mb-8 p-6 bg-gradient-to-r from-teal-400 to-blue-500 text-white rounded-2xl shadow-lg">
+        <div class="text-sm font-light flex justify-between items-center mb-4 border-b border-white border-opacity-30 pb-2">
+            <div>
+                Dr. SSN Raju<br>
+                <a href="mailto:drssnraju@gmail.com" class="hover:underline">drssnraju@gmail.com</a><br>
+                Whatsapp: +91 9391101403
+            </div>
+            <!-- Manually update this date with every change. -->
+            <div>Index file last updated: Sunday, September 7, 2025</div>
+        </div>
+        <header class="text-center">
+            <h1 class="text-3xl sm:text-4xl font-bold mb-2">The AI Universe Alpha Directory</h1>
+            <p class="text-lg text-white text-opacity-90">A curated and searchable collection of top AI applications and tools.</p>
         </header>
+    </div>
 
+    <div class="max-w-4xl mx-auto">
         <!-- Search Bar and Dropdowns -->
         <div class="flex flex-col sm:flex-row gap-4 mb-8">
             <input type="text" id="search-input" placeholder="Search by name..." class="flex-grow w-full p-3 pl-10 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 transition-all duration-200 shadow-sm">
@@ -37,11 +49,16 @@
         <div id="ai-tools-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Cards will be injected here by JavaScript -->
         </div>
+
+        <!-- Custom Footer -->
+        <div class="mt-12 text-center text-gray-400">
+            <p class="text-2xl">🌿🍃🌱</p>
+        </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // An extensive, up-to-date list of top-ranking AI tools.
+            // Updated and more comprehensive data for the AI directory.
             const aiTools = [
                 { name: "ChatGPT", ranking: 5, logo: "💬", site: "https://openai.com/chatgpt", utility: ["Generative Text", "Content Creation", "Coding Assistant", "General Purpose", "Research", "Education"] },
                 { name: "Midjourney", ranking: 5, logo: "🎨", site: "https://www.midjourney.com", utility: ["Image Generation", "AI Art", "Creative", "Design"] },

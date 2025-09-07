@@ -41,15 +41,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Sample data for the AI directory.
-            // In a full application, this data would be fetched from a database.
+            // Updated and more comprehensive data for the AI directory.
             const aiTools = [
                 {
                     name: "ChatGPT",
                     ranking: 5,
                     logo: "💬",
                     site: "https://openai.com/chatgpt",
-                    utility: ["Generative Text", "Content Creation", "Coding Assistant", "Brainstorming"],
+                    utility: ["Generative Text", "Content Creation", "Coding Assistant", "Brainstorming", "General Purpose"],
                 },
                 {
                     name: "Midjourney",
@@ -84,7 +83,7 @@
                     ranking: 4,
                     logo: "✍️",
                     site: "https://www.jasper.ai",
-                    utility: ["Writing Assistant", "Content Marketing", "Copywriting"],
+                    utility: ["Writing Assistant", "Content Marketing", "Copywriting", "Generative Text"],
                 },
                 {
                     name: "ElevenLabs",
@@ -190,6 +189,97 @@
                     logo: "🤖",
                     site: "https://www.microsoft.com/en-us/microsoft-copilot",
                     utility: ["Productivity", "Writing Assistant", "Search Engine"],
+                },
+                 {
+                    name: "Otter.ai",
+                    ranking: 4,
+                    logo: "🎙️",
+                    site: "https://otter.ai/",
+                    utility: ["Transcription", "Meeting Assistant", "Productivity", "Note-taking"],
+                },
+                {
+                    name: "Synthesia",
+                    ranking: 5,
+                    logo: "🧑‍💻",
+                    site: "https://www.synthesia.io/",
+                    utility: ["Video Generation", "AI Avatars", "Content Creation"],
+                },
+                {
+                    name: "HeyGen",
+                    ranking: 4,
+                    logo: "🎥",
+                    site: "https://www.heygen.com/",
+                    utility: ["Video Generation", "AI Avatars", "Creative"],
+                },
+                {
+                    name: "Codeium",
+                    ranking: 4,
+                    logo: "⌨️",
+                    site: "https://www.codeium.com/",
+                    utility: ["Coding Assistant", "Developer Tool", "Code Generation"],
+                },
+                {
+                    name: "Lumen5",
+                    ranking: 3,
+                    logo: "💡",
+                    site: "https://lumen5.com/",
+                    utility: ["Video Generation", "Content Creation", "Marketing"],
+                },
+                {
+                    name: "Fireflies.ai",
+                    ranking: 4,
+                    logo: "📝",
+                    site: "https://fireflies.ai/",
+                    utility: ["Transcription", "Meeting Assistant", "Productivity"],
+                },
+                {
+                    name: "Looka",
+                    ranking: 3,
+                    logo: "💎",
+                    site: "https://looka.com/",
+                    utility: ["Logo Design", "Branding", "Graphic Design"],
+                },
+                {
+                    name: "Soundraw",
+                    ranking: 3,
+                    logo: "🎶",
+                    site: "https://soundraw.io/",
+                    utility: ["Music Generation", "Creative", "Audio Creation"],
+                },
+                {
+                    name: "Gamma",
+                    ranking: 4,
+                    logo: "📄",
+                    site: "https://gamma.app/",
+                    utility: ["Presentations", "Document Creation", "Productivity"],
+                },
+                {
+                    name: "Caktus AI",
+                    ranking: 3,
+                    logo: "✍️",
+                    site: "https://www.caktus.ai/",
+                    utility: ["Writing Assistant", "Academic", "Education"],
+                },
+                {
+                    name: "Leonardo AI",
+                    ranking: 4,
+                    logo: "🖼️",
+                    site: "https://leonardo.ai/",
+                    utility: ["Image Generation", "AI Art", "Creative"],
+                },
+                {
+                    name: "Zapier",
+                    ranking: 4,
+                    logo: "🔗",
+                    site: "https://zapier.com/ai",
+                    utility: ["Automation", "Workflow", "Productivity"],
+                },
+                {
+                    name: "Udio",
+                    ranking: 3,
+                    logo: "🎧",
+                    site: "https://www.udio.com/",
+                    utility: ["Music Generation", "Audio Creation", "Creative"],
                 }
             ];
 
@@ -214,6 +304,10 @@
             // Function to render the AI tool cards
             function renderTools(tools) {
                 container.innerHTML = ''; // Clear previous cards
+                if (tools.length === 0) {
+                    container.innerHTML = `<p class="text-center col-span-full text-gray-500">No results found. Please try a different search or filter.</p>`;
+                    return;
+                }
                 tools.forEach(tool => {
                     const card = document.createElement('div');
                     card.className = 'bg-white p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1';

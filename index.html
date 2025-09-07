@@ -34,6 +34,11 @@
         </header>
     </div>
 
+    <!-- New Paragraph Banner -->
+    <div class="max-w-4xl mx-auto mb-8 p-4 rounded-xl bg-gray-200 text-gray-700 shadow-sm">
+        <p class="text-sm font-medium">Artificial intelligence is no longer a concept of the future; it's the driving force of the present. This directory serves as your guide to the powerful tools that are redefining how we work, create, and innovate every day.</p>
+    </div>
+
     <div class="max-w-4xl mx-auto">
         <!-- Search Bar and Dropdowns -->
         <div class="flex flex-col sm:flex-row gap-4 mb-8">
@@ -227,7 +232,8 @@
 
             // Initial render and populate dropdowns
             populateDropdowns();
-            filterAndRenderTools();
+            aiTools.sort((a, b) => a.name.localeCompare(b.name));
+            renderTools(aiTools);
         });
     </script>
 

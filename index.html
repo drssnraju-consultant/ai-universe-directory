@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Universe Directory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8 md:p-12">
+
+    <div class="max-w-4xl mx-auto">
+        <header class="text-center mb-12">
+            <h1 class="text-3xl sm:text-4xl font-bold mb-2 text-gray-800">The AI Universe Alpha Directory</h1>
+            <p class="text-gray-600">A curated and searchable collection of top AI applications and tools.</p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="mb-8">
+            <input type="text" id="search-input" placeholder="Search by name or utility..." class="w-full p-3 pl-10 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 transition-all duration-200 shadow-sm">
+        </div>
+
+        <!-- AI Tool Cards Container -->
+        <div id="ai-tools-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Cards will be injected here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample data for the AI directory.
+            // In a full application, this data would be fetched from a database.
+            const aiTools = [
+                {
+                    name: "ChatGPT",
+                    ranking: 5,
+                    logo: "💬",
+                    site: "https://openai.com/chatgpt",
+                    utility: ["Generative Text", "Content Creation", "Coding Assistant", "Brainstorming"],
+                },
+                {
+                    name: "Midjourney",
+                    ranking: 5,
+                    logo: "🎨",
+                    site: "https://www.midjourney.com",
+                    utility: ["Image Generation", "AI Art", "Creative"],
+                },
+                {
+                    name: "Canva Magic Studio",
+                    ranking: 4,
+                    logo: "✨",
+                    site: "https://www.canva.com/ai-assistant/",
+                    utility: ["Graphic Design", "Image Editing", "Content Creation"],
+                },
+                {
+                    name: "GitHub Copilot",
+                    ranking: 5,
+                    logo: "💻",
+                    site: "https://github.com/features/copilot",
+                    utility: ["Coding Assistant", "Code Generation", "Developer Tool"],
+                },
+                {
+                    name: "Notion AI",
+                    ranking: 4,
+                    logo: "📝",
+                    site: "https://www.notion.so/product/ai",
+                    utility: ["Productivity", "Content Creation", "Note-taking", "Project Management"],
+                },
+                {
+                    name: "Jasper",
+                    ranking: 4,
+                    logo: "✍️",
+                    site: "https://www.jasper.ai",
+                    utility: ["Writing Assistant", "Content Marketing", "Copywriting"],
+                },
+                {
+                    name: "ElevenLabs",
+                    ranking: 5,
+                    logo: "🎙️",
+                    site: "https://elevenlabs.io",
+                    utility: ["Text-to-Speech", "Audio Generation", "Voice Cloning"],
+                },
+                {
+                    name: "Perplexity AI",
+                    ranking: 4,
+                    logo: "🔎",
+                    site: "https://www.perplexity.ai",
+                    utility: ["Search Engine", "Research", "Information Retrieval"],
+                },
+                {
+                    name: "Descript",
+                    ranking: 4,
+                    logo: "🎬",
+                    site: "https://www.descript.com",
+                    utility: ["Video Editing", "Audio Editing", "Transcription"],
+                },
+                {
+                    name: "Grammarly",
+                    ranking: 4,
+                    logo: "📚",
+                    site: "https://www.grammarly.com",
+                    utility: ["Writing Assistant", "Grammar Check", "Editing"],
+                },
+                {
+                    name: "Suno AI",
+                    ranking: 3,
+                    logo: "🎵",
+                    site: "https://www.suno.ai",
+                    utility: ["Music Generation", "Audio Creation", "Creative"],
+                }
+            ];
+
+            const container = document.getElementById('ai-tools-container');
+            const searchInput = document.getElementById('search-input');
+
+            // Function to create a star rating
+            function createStars(rating) {
+                let stars = '';
+                for (let i = 0; i < 5; i++) {
+                    if (i < rating) {
+                        stars += '⭐';
+                    } else {
+                        stars += '☆';
+                    }
+                }
+                return stars;
+            }
+
+            // Function to render the AI tool cards
+            function renderTools(tools) {
+                container.innerHTML = ''; // Clear previous cards
+                tools.forEach(tool => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1';
+                    card.innerHTML = `
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="text-3xl">${tool.logo}</div>
+                            <div>
+                                <h2 class="text-xl font-semibold">${tool.name}</h2>
+                                <div class="text-yellow-400">${createStars(tool.ranking)}</div>
+                            </div>
+                        </div>
+                        <div class="mb-4 text-gray-700">
+                            ${tool.utility.map(keyword => `<span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full mr-1 mb-1">${keyword}</span>`).join('')}
+                        </div>
+                        <a href="${tool.site}" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">
+                            Visit Site &rarr;
+                        </a>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredTools = aiTools.filter(tool => {
+                    const nameMatch = tool.name.toLowerCase().includes(searchTerm);
+                    const utilityMatch = tool.utility.some(keyword => keyword.toLowerCase().includes(searchTerm));
+                    return nameMatch || utilityMatch;
+                });
+                renderTools(filteredTools);
+            });
+
+            // Initial render of all tools
+            renderTools(aiTools);
+        });
+    </script>
+
+</body>
+</html>

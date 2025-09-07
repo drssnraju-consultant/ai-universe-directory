@@ -1,5 +1,3 @@
-<!-- ai universe -->
-<!-- ai universe -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +22,15 @@
             <p class="text-gray-600">A curated and searchable collection of top AI applications and tools.</p>
         </header>
 
-        <!-- Search Bar -->
-        <div class="mb-8">
-            <input type="text" id="search-input" placeholder="Search by name or utility..." class="w-full p-3 pl-10 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 transition-all duration-200 shadow-sm">
+        <!-- Search Bar and Dropdowns -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <input type="text" id="search-input" placeholder="Search by name..." class="flex-grow w-full p-3 pl-10 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 transition-all duration-200 shadow-sm">
+            <select id="utility-select" class="w-full sm:w-1/2 p-3 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 transition-all duration-200 shadow-sm bg-white">
+                <option value="">Filter by Utility</option>
+            </select>
+            <select id="name-select" class="w-full sm:w-1/2 p-3 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 transition-all duration-200 shadow-sm bg-white">
+                <option value="">Filter by App Name</option>
+            </select>
         </div>
 
         <!-- AI Tool Cards Container -->
@@ -121,6 +125,8 @@
 
             const container = document.getElementById('ai-tools-container');
             const searchInput = document.getElementById('search-input');
+            const utilitySelect = document.getElementById('utility-select');
+            const nameSelect = document.getElementById('name-select');
 
             // Function to create a star rating
             function createStars(rating) {
@@ -160,19 +166,66 @@
                 });
             }
 
-            // Search functionality
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
+            // Function to filter and render tools based on all inputs
+            function filterAndRenderTools() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedUtility = utilitySelect.value.toLowerCase();
+                const selectedName = nameSelect.value.toLowerCase();
+
                 const filteredTools = aiTools.filter(tool => {
+                    // Filter by search input
                     const nameMatch = tool.name.toLowerCase().includes(searchTerm);
                     const utilityMatch = tool.utility.some(keyword => keyword.toLowerCase().includes(searchTerm));
-                    return nameMatch || utilityMatch;
+                    const searchFilter = (searchTerm === '') || nameMatch || utilityMatch;
+
+                    // Filter by dropdown selections
+                    const utilityFilter = (selectedUtility === '') || tool.utility.map(u => u.toLowerCase()).includes(selectedUtility);
+                    const nameFilter = (selectedName === '') || tool.name.toLowerCase() === selectedName;
+
+                    return searchFilter && utilityFilter && nameFilter;
                 });
+
                 renderTools(filteredTools);
+            }
+
+            // Populate the dropdowns
+            function populateDropdowns() {
+                // Populate Utility Dropdown
+                const allUtilities = new Set();
+                aiTools.forEach(tool => {
+                    tool.utility.forEach(keyword => allUtilities.add(keyword));
+                });
+                allUtilities.forEach(keyword => {
+                    const option = document.createElement('option');
+                    option.value = keyword.toLowerCase();
+                    option.textContent = keyword;
+                    utilitySelect.appendChild(option);
+                });
+
+                // Populate Name Dropdown
+                const allNames = new Set(aiTools.map(tool => tool.name));
+                allNames.forEach(name => {
+                    const option = document.createElement('option');
+                    option.value = name.toLowerCase();
+                    option.textContent = name;
+                    nameSelect.appendChild(option);
+                });
+            }
+
+            // Add event listeners for filtering
+            searchInput.addEventListener('input', filterAndRenderTools);
+            utilitySelect.addEventListener('change', () => {
+                nameSelect.value = ''; // Clear other dropdown
+                filterAndRenderTools();
+            });
+            nameSelect.addEventListener('change', () => {
+                utilitySelect.value = ''; // Clear other dropdown
+                filterAndRenderTools();
             });
 
-            // Initial render of all tools
-            renderTools(aiTools);
+            // Initial render and populate dropdowns
+            populateDropdowns();
+            filterAndRenderTools();
         });
     </script>
 

@@ -3,239 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Universe Directory</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>The AI Universe Alpha Directory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #1f2937;
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        .card { transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); }
+        .grid-container {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: 1fr; /* Single column layout */
+        }
+        .used-by-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .used-by-item {
+            font-size: 0.875rem;
+            color: #4a5568;
+            background-color: #e2e8f0;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+        }
+        .company-logo {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.25rem;
+            border-radius: 50%;
         }
     </style>
 </head>
-<body class="p-4 sm:p-8 md:p-12">
-
-    <!-- Custom Banner -->
-    <div class="max-w-4xl mx-auto mb-8 p-6 bg-gradient-to-r from-teal-400 to-blue-500 text-white rounded-2xl shadow-lg">
-        <div class="text-sm font-light flex justify-between items-center mb-4 border-b border-white border-opacity-30 pb-2">
-            <div>
-                Dr. SSN Raju<br>
-                <a href="mailto:drssnraju@gmail.com" class="hover:underline">drssnraju@gmail.com</a><br>
-                Whatsapp: +91 9391101403
+<body class="bg-gray-100 p-6 sm:p-10 text-gray-800">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header Banner -->
+        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-8 sm:p-12 md:p-16 rounded-xl shadow-lg text-center mb-8 sm:mb-12">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">The AI Universe Alpha Directory</h1>
+            <p class="mt-4 text-sm sm:text-lg italic font-light">Your guide to the future of AI.</p>
+            <p class="mt-2 text-sm">A curated and searchable collection of top AI applications and tools.</p>
+            <div class="mt-6 text-xs sm:text-sm">
+                <p>Index file last updated: Monday, September 10, 2025.</p>
+                <p>Dr. SSN Raju, <a href="mailto:drssnraju@gmail.com" class="text-white hover:underline">drssnraju@gmail.com</a>, WhatsApp +91 9391101403</p>
             </div>
-            <!-- Manually update this date with every change. -->
-            <div>Index file last updated: Sunday, September 7, 2025</div>
         </div>
-        <header class="text-center">
-            <h1 class="text-3xl sm:text-4xl font-bold mb-2">The AI Universe Alpha Directory</h1>
-            <p class="text-lg text-white text-opacity-90">Your guide to the future of AI.</p>
-            <p class="text-lg text-white text-opacity-90">A curated and searchable collection of top AI applications and tools.</p>
-        </header>
-    </div>
 
-    <!-- New Paragraph Banner -->
-    <div class="max-w-4xl mx-auto mb-8 p-4 rounded-xl bg-gray-200 text-gray-700 shadow-sm">
-        <p class="text-sm font-medium">Artificial intelligence is no longer a concept of the future; it's the driving force of the present. This directory serves as your guide to the powerful tools that are redefining how we work, create, and innovate every day.</p>
-    </div>
+        <!-- Banner for Paragraph -->
+        <div class="bg-white p-6 sm:p-8 rounded-lg shadow-md text-center mb-8">
+            <p class="text-sm sm:text-base text-gray-700">
+                Artificial intelligence is no longer a concept of the future; it's the driving force of the present. This directory serves as your guide to the powerful tools that are redefining how we work, create, and innovate every day.
+            </p>
+        </div>
 
-    <div class="max-w-4xl mx-auto">
-        <!-- Search Bar and Dropdowns -->
+        <!-- Inspirational Quotes Banner -->
+        <div class="bg-gray-200 p-6 sm:p-8 rounded-lg shadow-md mb-8">
+            <h3 class="text-lg font-semibold text-gray-800 text-center mb-4">Quotes from AI Pioneers</h3>
+            <div class="flex overflow-x-scroll no-scrollbar space-x-4 pb-4">
+                <div class="flex-none w-80 bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-600">"The question of whether machines can think is no more interesting than the question of whether submarines can swim."</p>
+                    <p class="mt-4 font-semibold text-gray-800">— Edsger W. Dijkstra</p>
+                </div>
+                <div class="flex-none w-80 bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-600">"The pace of progress in AI is faster than our ability to adapt, which could lead to significant societal disruption."</p>
+                    <p class="mt-4 font-semibold text-gray-800">— Geoffrey Hinton</p>
+                </div>
+                <div class="flex-none w-80 bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-600">"AI is a powerful tool. Like any powerful tool, it is morally neutral."</p>
+                    <p class="mt-4 font-semibold text-gray-800">— Andrew Ng</p>
+                </div>
+                <div class="flex-none w-80 bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-600">"The development of full artificial intelligence could spell the end of the human race."</p>
+                    <p class="mt-4 font-semibold text-gray-800">— Stephen Hawking</p>
+                </div>
+                <div class="flex-none w-80 bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-600">"AI is the new electricity. It will transform every industry."</p>
+                    <p class="mt-4 font-semibold text-gray-800">— Andrew Ng</p>
+                </div>
+                <div class="flex-none w-80 bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-600">"The best way to predict the future is to create it."</p>
+                    <p class="mt-4 font-semibold text-gray-800">— Alan Kay</p>
+                </div>
+                <div class="flex-none w-80 bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-600">"I don't think a computer could be called intelligent until it can pass the Turing test."</p>
+                    <p class="mt-4 font-semibold text-gray-800">— Alan Turing</p>
+                </div>
+                <div class="flex-none w-80 bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-600">"The greatest danger of AI is that people conclude too early that they understand it."</p>
+                    <p class="mt-4 font-semibold text-gray-800">— Eliezer Yudkowsky</p>
+                </div>
+                <div class="flex-none w-80 bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-600">"Any sufficiently advanced technology is indistinguishable from magic."</p>
+                    <p class="mt-4 font-semibold text-gray-800">— Arthur C. Clarke</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ranking Explanation -->
+        <div class="bg-gray-200 p-4 sm:p-6 rounded-lg shadow-md text-center mb-8">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Our Ranking Methodology</h3>
+            <p class="text-sm text-gray-600">The ranking for each app is based on three key metrics:</p>
+            <ul class="mt-2 text-sm text-gray-600 inline-block text-left">
+                <li><strong>⭐ Market Share:</strong> The app's overall adoption and user base.</li>
+                <li><strong>✨ User Experience:</strong> Ease of use and overall interface design.</li>
+                <li><strong>⚡ Feature Set:</strong> The depth and breadth of the app's capabilities.</li>
+            </ul>
+        </div>
+
+        <!-- Search and Filters -->
         <div class="flex flex-col sm:flex-row gap-4 mb-8">
-            <input type="text" id="search-input" placeholder="Search by name..." class="flex-grow w-full p-3 pl-10 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 transition-all duration-200 shadow-sm">
-            <select id="utility-select" class="w-full sm:w-1/2 p-3 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 transition-all duration-200 shadow-sm bg-white">
-                <option value="">Filter by Utility</option>
+            <input type="text" id="searchInput" placeholder="Search by name, utility, or ranking..." class="flex-grow p-3 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <select id="utilityFilter" class="p-3 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-[200px]">
+                <option value="">All Utilities</option>
             </select>
-            <select id="name-select" class="w-full sm:w-1/2 p-3 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 transition-all duration-200 shadow-sm bg-white">
-                <option value="">Filter by App Name</option>
+            <select id="appFilter" class="p-3 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-[200px]">
+                <option value="">All App Names</option>
             </select>
         </div>
 
-        <!-- AI Tool Cards Container -->
-        <div id="ai-tools-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Cards will be injected here by JavaScript -->
+        <!-- AI App Cards -->
+        <div id="appContainer" class="grid-container">
+            <!-- App cards will be dynamically inserted here -->
         </div>
 
-        <!-- Custom Footer with Quote/Tagline -->
-        <div class="mt-12 text-center text-gray-700">
-            <div class="p-4 rounded-xl bg-gradient-to-r from-teal-400 to-blue-500 text-white font-medium shadow-md">
-                <p class="text-base sm:text-lg italic">"Your compass in the ever-expanding universe of AI."</p>
-            </div>
+        <!-- Footer Banner -->
+        <div class="mt-12 text-center bg-gray-200 p-6 rounded-lg shadow-md text-gray-600">
+            <p class="text-sm sm:text-base font-light">"Your compass in the ever-expanding universe of AI."</p>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Updated and more comprehensive data for the AI directory.
+        document.addEventListener('DOMContentLoaded', () => {
             const aiTools = [
-                { name: "ChatGPT", ranking: 5, logo: "💬", site: "https://openai.com/chatgpt", utility: ["Generative Text", "Content Creation", "Coding Assistant", "General Purpose", "Research", "Education"] },
-                { name: "Midjourney", ranking: 5, logo: "🎨", site: "https://www.midjourney.com", utility: ["Image Generation", "AI Art", "Creative", "Design"] },
-                { name: "Canva Magic Studio", ranking: 4, logo: "✨", site: "https://www.canva.com/ai-assistant/", utility: ["Graphic Design", "Image Editing", "Content Creation", "Marketing"] },
-                { name: "GitHub Copilot", ranking: 5, logo: "💻", site: "https://github.com/features/copilot", utility: ["Coding Assistant", "Code Generation", "Developer Tool"] },
-                { name: "Notion AI", ranking: 4, logo: "📝", site: "https://www.notion.so/product/ai", utility: ["Productivity", "Content Creation", "Note-taking", "Project Management", "Research"] },
-                { name: "Jasper", ranking: 4, logo: "✍️", site: "https://www.jasper.ai", utility: ["Writing Assistant", "Content Marketing", "Copywriting", "Generative Text", "Creative Writing"] },
-                { name: "ElevenLabs", ranking: 5, logo: "🎙️", site: "https://elevenlabs.io", utility: ["Text-to-Speech", "Audio Generation", "Voice Cloning", "Video & Audio"] },
-                { name: "Perplexity AI", ranking: 4, logo: "🔎", site: "https://www.perplexity.ai", utility: ["Search Engine", "Research", "Information Retrieval", "Knowledge"] },
-                { name: "Descript", ranking: 4, logo: "🎬", site: "https://www.descript.com", utility: ["Video Editing", "Audio Editing", "Transcription", "Productivity"] },
-                { name: "Grammarly", ranking: 4, logo: "📚", site: "https://www.grammarly.com", utility: ["Writing Assistant", "Grammar Check", "Editing", "Education"] },
-                { name: "Suno AI", ranking: 3, logo: "🎵", site: "https://www.suno.ai", utility: ["Music Generation", "Audio Creation", "Creative", "Gaming"] },
-                { name: "Adobe Firefly", ranking: 4, logo: "🖌️", site: "https://www.adobe.com/sensei/generative-ai/firefly.html", utility: ["Image Generation", "Photo Editing", "Creative", "Design"] },
-                { name: "Runway", ranking: 5, logo: "🎥", site: "https://runwayml.com/", utility: ["Video Editing", "Video Generation", "Creative"] },
-                { name: "Tome", ranking: 4, logo: "📊", site: "https://tome.app/", utility: ["Presentations", "Content Creation", "Storytelling"] },
-                { name: "Murf AI", ranking: 4, logo: "🗣️", site: "https://murf.ai/", utility: ["Text-to-Speech", "Voice Cloning", "Audio Generation"] },
-                { name: "AdCreative.ai", ranking: 4, logo: "🎯", site: "https://www.adcreative.ai/", utility: ["Marketing", "Advertising", "Content Creation", "Business"] },
-                { name: "DeepL", ranking: 5, logo: "🌐", site: "https://www.deepl.com/", utility: ["Translation", "Language Tool", "Writing Assistant"] },
-                { name: "DALL-E 3", ranking: 5, logo: "🖼️", site: "https://openai.com/dall-e-3", utility: ["Image Generation", "AI Art", "Creative"] },
-                { name: "Replit", ranking: 4, logo: "🖥️", site: "https://replit.com/ai", utility: ["Coding Assistant", "Developer Tool", "Learning"] },
-                { name: "Sora", ranking: 5, logo: "🎞️", site: "https://openai.com/sora", utility: ["Video Generation", "Creative"] },
-                { name: "Microsoft Copilot", ranking: 4, logo: "🤖", site: "https://www.microsoft.com/en-us/microsoft-copilot", utility: ["Productivity", "Writing Assistant", "Search Engine", "General Purpose"] },
-                { name: "Otter.ai", ranking: 4, logo: "🎙️", site: "https://otter.ai/", utility: ["Transcription", "Meeting Assistant", "Productivity", "Note-taking"] },
-                { name: "Synthesia", ranking: 5, logo: "🧑‍💻", site: "https://www.synthesia.io/", utility: ["Video Generation", "AI Avatars", "Content Creation"] },
-                { name: "HeyGen", ranking: 4, logo: "🎥", site: "https://www.heygen.com/", utility: ["Video Generation", "AI Avatars", "Creative"] },
-                { name: "Codeium", ranking: 4, logo: "⌨️", site: "https://www.codeium.com/", utility: ["Coding Assistant", "Developer Tool", "Code Generation"] },
-                { name: "Lumen5", ranking: 3, logo: "💡", site: "https://lumen5.com/", utility: ["Video Generation", "Content Creation", "Marketing"] },
-                { name: "Fireflies.ai", ranking: 4, logo: "📝", site: "https://fireflies.ai/", utility: ["Transcription", "Meeting Assistant", "Productivity"] },
-                { name: "Looka", ranking: 3, logo: "💎", site: "https://looka.com/", utility: ["Logo Design", "Branding", "Graphic Design"] },
-                { name: "Soundraw", ranking: 3, logo: "🎶", site: "https://soundraw.io/", utility: ["Music Generation", "Creative", "Audio Creation"] },
-                { name: "Gamma", ranking: 4, logo: "📄", site: "https://gamma.app/", utility: ["Presentations", "Document Creation", "Productivity"] },
-                { name: "Caktus AI", ranking: 3, logo: "✍️", site: "https://www.caktus.ai/", utility: ["Writing Assistant", "Academic", "Education"] },
-                { name: "Leonardo AI", ranking: 4, logo: "🖼️", site: "https://leonardo.ai/", utility: ["Image Generation", "AI Art", "Creative"] },
-                { name: "Zapier", ranking: 4, logo: "🔗", site: "https://zapier.com/ai", utility: ["Automation", "Workflow", "Productivity"] },
-                { name: "Udio", ranking: 3, logo: "🎧", site: "https://www.udio.com/", utility: ["Music Generation", "Audio Creation", "Creative"] },
-                { name: "Claude", ranking: 5, logo: "🗣️", site: "https://www.anthropic.com/product/claude", utility: ["Generative Text", "Content Creation", "Writing Assistant", "Coding Assistant", "Research"] },
-                { name: "Motion", ranking: 4, logo: "📅", site: "https://www.usemotion.com/", utility: ["Scheduling", "Productivity", "Project Management"] },
-                { name: "Sprout Social", ranking: 4, logo: "📈", site: "https://sproutsocial.com/ai/", utility: ["Social Media", "Marketing", "Analytics", "Content Creation"] },
-                { name: "Gorgias", ranking: 4, logo: "🛍️", site: "https://www.gorgias.com/", utility: ["Customer Support", "E-Commerce", "Automation"] },
-                { name: "HubSpot", ranking: 4, logo: "✉️", site: "https://www.hubspot.com/products/ai", utility: ["Marketing", "Sales", "CRM", "Automation"] },
-                { name: "Asana Intelligence", ranking: 3, logo: "🧩", site: "https://asana.com/product/ai", utility: ["Project Management", "Productivity", "Workflow"] },
-                { name: "Midjourney", ranking: 5, logo: "🎨", site: "https://www.midjourney.com/", utility: ["Image Generation", "AI Art", "Creative"] },
-                { name: "Runway", ranking: 5, logo: "🎥", site: "https://runwayml.com/", utility: ["Video Editing", "Video Generation", "Creative"] },
-                { name: "Zest AI", ranking: 4, logo: "🏦", site: "https://www.zest.ai/", utility: ["Finance", "Lending", "Risk Assessment"] },
-                { name: "CrowdStrike Falcon", ranking: 5, logo: "🛡️", site: "https://www.crowdstrike.com/", utility: ["Security", "Cybersecurity", "Threat Detection"] },
-                { name: "Darktrace", ranking: 4, logo: "🔒", site: "https://www.darktrace.com/", utility: ["Security", "Cybersecurity", "Threat Detection"] },
-                { name: "Pymetrics", ranking: 4, logo: "🧑‍🤝‍🧑", site: "https://www.pymetrics.com/", utility: ["HR & Recruiting", "Talent Management", "Behavioral Science"] },
-                { name: "Greenhouse", ranking: 4, logo: "🌱", site: "https://www.greenhouse.com/", utility: ["HR & Recruiting", "Applicant Tracking"] },
-                { name: "Ada", ranking: 4, logo: "⚕️", site: "https://ada.com/", utility: ["Healthcare", "Symptom Checker", "Wellness"] },
-                { name: "Wysa", ranking: 3, logo: "🧠", site: "https://www.wysa.io/", utility: ["Mental Health", "Wellness", "Chatbot"] },
-                { name: "Lawfyi.io", ranking: 3, logo: "⚖️", site: "https://www.lawfyi.io/", utility: ["Legal", "Contract Review", "Compliance"] },
-                { name: "Connected Papers", ranking: 4, logo: "🔗", site: "https://www.connectedpapers.com/", utility: ["Research", "Knowledge", "Academic"] },
-                { name: "AlphaSense", ranking: 4, logo: "📈", site: "https://www.alphasense.com/", utility: ["Finance", "Investment Analysis", "Research"] },
-                { name: "Replika", ranking: 3, logo: "🤖", site: "https://replika.ai/", utility: ["Personal Companion", "Mental Health", "Chatbot"] },
-                { name: "Inworld AI", ranking: 4, logo: "🎮", site: "https://www.inworld.ai/", utility: ["Gaming", "Creative", "NPCs"] },
+                // Group 1: Automation & Integration AI Tools
+                { name: "Zapier", ranking: { market: 5, ux: 4, feature: 5 }, logo: "⚡", site: "https://zapier.com/l/ai-automation", utility: ["Automation", "Integration", "Workflow"], usedBy: ["Google", "Salesforce", "Microsoft"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Microsoft Power Automate", ranking: { market: 4, ux: 4, feature: 5 }, logo: "🤖", site: "https://powerautomate.microsoft.com/", utility: ["Automation", "Integration", "Workflow"], usedBy: ["Coca-Cola", "HP", "Standard Bank"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "IFTTT", ranking: { market: 3, ux: 4, feature: 3 }, logo: "🚀", site: "https://ifttt.com/", utility: ["Automation", "Integration", "Workflow"], usedBy: ["Nest", "Philips Hue", "Amazon Alexa"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Domino", ranking: { market: 4, ux: 4, feature: 4 }, logo: "⚙️", site: "https://www.domino.com/", utility: ["Automation", "Integration", "Data"], usedBy: ["Allstate", "Dell", "Lockheed Martin"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 2: Business & Marketing AI Apps
+                { name: "Jasper", ranking: { market: 5, ux: 5, feature: 5 }, logo: "✍️", site: "https://www.jasper.ai/", utility: ["Marketing", "Copywriting", "Content Creation"], usedBy: ["IBM", "Airbnb", "HubSpot"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Semrush", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📈", site: "https://www.semrush.com/", utility: ["Marketing", "SEO", "Analytics"], usedBy: ["Tesla", "Booking.com", "Forbes"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Grammarly", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📝", site: "https://www.grammarly.com/", utility: ["Writing", "Editing", "Productivity"], usedBy: ["Dell", "Figma", "Zoom"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/ai-for-everyone", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "HubSpot AI", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🧲", site: "https://www.hubspot.com/ai", utility: ["Marketing", "Sales", "Business"], usedBy: ["Shopify", "Monday.com", "Miro"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Optimove", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🎯", site: "https://www.optimove.com/", utility: ["Marketing", "Personalization", "Business"], usedBy: ["BetMGM", "Macy's", "Staples"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 3: Coding & Development AI Tools
+                { name: "GitHub Copilot", ranking: { market: 5, ux: 5, feature: 5 }, logo: "💻", site: "https://github.com/features/copilot", utility: ["Coding", "Development", "Productivity"], usedBy: ["Duolingo", "Shopify", "Stripe"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Replit", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🌐", site: "https://replit.com/", utility: ["Coding", "Development", "Education"], usedBy: ["Students", "Startups"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Tabnine", ranking: { market: 4, ux: 4, feature: 4 }, logo: "⌨️", site: "https://www.tabnine.com/", utility: ["Coding", "Development", "Productivity"], usedBy: ["Amazon", "Cisco", "HP"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Amazon Q Developer", ranking: { market: 4, ux: 4, feature: 5 }, logo: "☁️", site: "https://aws.amazon.com/q/", utility: ["Coding", "Development", "Cloud"], usedBy: ["AWS Developers", "NVIDIA", "Accenture"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 4: Creative Writing & Storytelling AI Apps
+                { name: "Sudowrite", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📖", site: "https://www.sudowrite.com/", utility: ["Creative Writing", "Storytelling", "Writing"], usedBy: ["Authors", "Creative Writers"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "ChatGPT", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🤖", site: "https://chat.openai.com/", utility: ["Creative Writing", "Chatbot", "General"], usedBy: ["NASA", "Morgan Stanley", "Students", "Everyone"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Claude", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📜", site: "https://claude.ai/", utility: ["Creative Writing", "Chatbot", "General"], usedBy: ["Quora", "The Economist", "Airtable"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Jasper", ranking: { market: 5, ux: 5, feature: 5 }, logo: "✍️", site: "https://www.jasper.ai/", utility: ["Creative Writing", "Writing", "Content Creation"], usedBy: ["IBM", "Airbnb", "HubSpot"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+
+                // Group 5: Customer Support & Service AI
+                { name: "Zendesk", ranking: { market: 4, ux: 4, feature: 4 }, logo: "📞", site: "https://www.zendesk.com/", utility: ["Customer Support", "Helpdesk", "Service"], usedBy: ["Uber", "Netflix", "Shopify"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Intercom", ranking: { market: 5, ux: 5, feature: 5 }, logo: "💬", site: "https://www.intercom.com/", utility: ["Customer Support", "Chatbot", "Service"], usedBy: ["Atlassian", "GitHub", "Figma"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Ada", ranking: { market: 4, ux: 4, feature: 4 }, logo: "💁‍♀️", site: "https://www.ada.cx/", utility: ["Customer Support", "Chatbot", "Service"], usedBy: ["Square", "Zoom", "Meta"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 6: Data & Analytics AI Tools
+                { name: "Tableau", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📊", site: "https://www.tableau.com/", utility: ["Data", "Analytics", "Business Intelligence"], usedBy: ["Dell", "PwC", "Verizon"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Julius AI", ranking: { market: 4, ux: 4, feature: 5 }, logo: "🧠", site: "https://julius.ai/", utility: ["Data", "Analytics", "Visualization"], usedBy: ["Students", "Data Scientists", "Researchers"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "DataRobot", ranking: { market: 5, ux: 4, feature: 5 }, logo: "⚙️", site: "https://www.datarobot.com/", utility: ["Data", "Analytics", "Machine Learning"], usedBy: ["CVS Health", "Deloitte", "PepsiCo"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+
+                // Group 7: Design & Image Generation AI Apps
+                { name: "Midjourney", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🎨", site: "https://www.midjourney.com/", utility: ["Image Generation", "Art", "Design"], usedBy: ["Artists", "Architects", "Designers"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.youtube.com/watch?v=Jb1x86b1h58", "https://www.udemy.com/course/midjourney-for-beginners-ai-art-generator/", "https://www.skillshare.com/en/classes/how-to-create-ai-art-with-midjourney/1163067152", "https://www.coursera.org/learn/generative-ai-for-everyone"] },
+                { name: "DALL-E", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🖼️", site: "https://openai.com/dall-e-3", utility: ["Image Generation", "Art", "Creative"], usedBy: ["Microsoft", "Content Creators"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Canva", ranking: { market: 5, ux: 5, feature: 4 }, logo: "🖌️", site: "https://www.canva.com/ai-image-generator/", utility: ["Image Generation", "Design", "Graphics"], usedBy: ["Social Media Managers", "Small Businesses", "Students"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Adobe Firefly", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🔥", site: "https://www.adobe.com/sensei/generative-ai/firefly.html", utility: ["Image Generation", "Photo Editing", "Creative"], usedBy: ["Creative Professionals", "Designers", "Photographers"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 8: Education & Learning AI Apps
+                { name: "Socratic", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🎓", site: "https://socratic.org/", utility: ["Education", "Learning", "Research"], usedBy: ["Students", "Teachers", "Academics"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Quizlet", ranking: { market: 4, ux: 4, feature: 4 }, logo: "📖", site: "https://quizlet.com/", utility: ["Education", "Learning", "Study"], usedBy: ["Students", "Tutors", "Teachers"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Duolingo", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🦉", site: "https://www.duolingo.com/", utility: ["Education", "Language Learning", "Gamification"], usedBy: ["Language Learners", "Travelers"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 9: E-Commerce & Retail AI Tools
+                { name: "Shopify Magic", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🛍️", site: "https://www.shopify.com/magic", utility: ["E-Commerce", "Marketing", "Retail"], usedBy: ["Shopify Merchants", "Online Stores"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Gorgias", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🛒", site: "https://www.gorgias.com/", utility: ["E-Commerce", "Customer Support", "Service"], usedBy: ["Steve Madden", "Fossil", "Oatly"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Klaviyo", ranking: { market: 4, ux: 4, feature: 4 }, logo: "📧", site: "https://www.klaviyo.com/", utility: ["E-Commerce", "Marketing", "Email"], usedBy: ["The North Face", "Glossier"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 10: Environment & Sustainability AI
+                { name: "Sustain.AI", ranking: { market: 3, ux: 3, feature: 3 }, logo: "🌱", site: "https://sustain.ai/", utility: ["Environment", "Sustainability", "Data"], usedBy: ["Enterprises", "ESG Teams"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 11: Finance & FinTech AI Apps
+                { name: "AlphaSense", ranking: { market: 5, ux: 5, feature: 5 }, logo: "💰", site: "https://www.alpha-sense.com/", utility: ["Finance", "FinTech", "Research"], usedBy: ["Morgan Stanley", "PwC", "Bank of America"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Zest AI", ranking: { market: 4, ux: 4, feature: 5 }, logo: "🏦", site: "https://www.zest.ai/", utility: ["Finance", "FinTech", "Lending"], usedBy: ["Banks", "Credit Unions"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Quantivate", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🛡️", site: "https://www.quantivate.com/", utility: ["Finance", "FinTech", "Compliance"], usedBy: ["Financial Institutions", "GRC Teams"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 12: Gaming & Entertainment AI
+                { name: "AI Dungeon", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🎲", site: "https://aidungeon.io/", utility: ["Gaming", "Storytelling", "Creative"], usedBy: ["Gamers", "Writers"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Inworld AI", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🎮", site: "https://www.inworld.ai/", utility: ["Gaming", "Development", "Chatbot"], usedBy: ["Game Developers", "Creators"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 13: Healthcare & Wellness AI Apps
+                { name: "Ada", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🩺", site: "https://ada.com/", utility: ["Healthcare", "Wellness", "Diagnosis"], usedBy: ["Patients", "Medical Professionals"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Wysa", ranking: { market: 4, ux: 5, feature: 5 }, logo: "🧘", site: "https://www.wysa.com/", utility: ["Healthcare", "Wellness", "Therapy"], usedBy: ["Individuals", "Mental Health Professionals"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 14: HR & Recruiting AI Tools
+                { name: "Greenhouse", ranking: { market: 5, ux: 5, feature: 5 }, logo: "💼", site: "https://www.greenhouse.com/", utility: ["HR", "Recruiting", "Talent"], usedBy: ["Airbnb", "Stripe", "Pinterest"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "SeekOut", ranking: { market: 4, ux: 5, feature: 5 }, logo: "🔍", site: "https://seekout.com/", utility: ["HR", "Recruiting", "Sourcing"], usedBy: ["Cisco", "HP", "Dropbox"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 15: Knowledge & Research AI Apps
+                { name: "Perplexity", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🔎", site: "https://www.perplexity.ai/", utility: ["Knowledge", "Research", "Search"], usedBy: ["Students", "Researchers", "Journalists"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Glean", ranking: { market: 4, ux: 5, feature: 5 }, logo: "📚", site: "https://www.glean.com/", utility: ["Knowledge", "Research", "Search"], usedBy: ["Stripe", "Datadog", "Confluent"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Scite", ranking: { market: 4, ux: 4, feature: 5 }, logo: "🧪", site: "https://scite.ai/", utility: ["Knowledge", "Research", "Academic"], usedBy: ["Academics", "Researchers", "Scientists"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 16: Legal & Compliance AI Tools
+                { name: "Harvey", ranking: { market: 5, ux: 5, feature: 5 }, logo: "⚖️", site: "https://www.harvey.ai/", utility: ["Legal", "Compliance", "Research"], usedBy: ["Allen & Overy", "PwC", "EY"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Lawfyi.io", ranking: { market: 4, ux: 4, feature: 4 }, logo: "📄", site: "https://lawfyi.io/", utility: ["Legal", "Compliance", "Document Review"], usedBy: ["Contract Teams", "Legal Operations"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 17: Manufacturing & Industry AI
+                { name: "IBM Watsonx", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🏭", site: "https://www.ibm.com/watsonx", utility: ["Manufacturing", "Industry", "Analytics"], usedBy: ["Siemens", "General Motors", "Daimler"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Google Vertex AI", ranking: { market: 4, ux: 4, feature: 5 }, logo: "⚙️", site: "https://cloud.google.com/vertex-ai", utility: ["Manufacturing", "Industry", "Machine Learning"], usedBy: ["Developers", "Data Scientists", "Machine Learning Engineers"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 18: Personal Companions & Lifestyle AI
+                { name: "Replika", ranking: { market: 4, ux: 4, feature: 4 }, logo: "👫", site: "https://replika.com/", utility: ["Personal", "Lifestyle", "Chatbot"], usedBy: ["Individual Users"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Wysa", ranking: { market: 4, ux: 5, feature: 5 }, logo: "🧘", site: "https://www.wysa.com/", utility: ["Personal", "Lifestyle", "Wellness"], usedBy: ["Individuals", "Mental Health Professionals"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 19: Productivity & Workflow AI Apps
+                { name: "Notion AI", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🧠", site: "https://www.notion.so/product/ai", utility: ["Productivity", "Workflow", "Organization"], usedBy: ["Students", "Remote Teams", "Startups"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Superhuman", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📧", site: "https://superhuman.com/", utility: ["Productivity", "Email", "Workflow"], usedBy: ["Sales Professionals", "Executives", "Venture Capitalists"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Motion", ranking: { market: 4, ux: 5, feature: 4 }, logo: "📆", site: "https://www.usemotion.com/", utility: ["Productivity", "Scheduling", "Workflow"], usedBy: ["Freelancers", "Managers", "Busy Professionals"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Otter.ai", ranking: { market: 4, ux: 5, feature: 4 }, logo: "🎤", site: "https://otter.ai/", utility: ["Productivity", "Transcription", "Meetings"], usedBy: ["Students", "Journalists", "Meeting Facilitators"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 20: Security & Privacy AI Tools
+                { name: "CrowdStrike", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🛡️", site: "https://www.crowdstrike.com/", utility: ["Security", "Privacy", "Cybersecurity"], usedBy: ["Credit Suisse", "21st Century Fox", "Salesforce"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Darktrace", ranking: { market: 4, ux: 5, feature: 5 }, logo: "🔒", site: "https://www.darktrace.com/", utility: ["Security", "Privacy", "Cybersecurity"], usedBy: ["Coca-Cola", "Siemens", "Rolls-Royce"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 21: Social Media & Content Creation AI
+                { name: "Buffer", ranking: { market: 4, ux: 5, feature: 4 }, logo: "📣", site: "https://buffer.com/", utility: ["Social Media", "Content Creation", "Marketing"], usedBy: ["Microsoft", "Trello", "Basecamp"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Jasper", ranking: { market: 5, ux: 5, feature: 5 }, logo: "✍️", site: "https://www.jasper.ai/", utility: ["Social Media", "Content Creation", "Marketing"], usedBy: ["IBM", "Airbnb", "HubSpot"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 22: Text & Writing AI Apps
+                { name: "ChatGPT", ranking: { market: 5, ux: 5, feature: 5 }, logo: "💬", site: "https://chat.openai.com/", utility: ["Writing", "Text", "Chatbot"], usedBy: ["NASA", "Morgan Stanley", "Students", "Everyone"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Claude", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📜", site: "https://claude.ai/", utility: ["Writing", "Text", "Chatbot"], usedBy: ["Quora", "The Economist", "Airtable"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Grammarly", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📝", site: "https://www.grammarly.com/", utility: ["Writing", "Text", "Editing"], usedBy: ["Dell", "Figma", "Zoom"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Gemini", ranking: { market: 5, ux: 5, feature: 5 }, logo: "♊", site: "https://gemini.google.com/", utility: ["Writing", "Text", "Research"], usedBy: ["Google Workspace Users", "Students"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+
+                // Group 23: Travel & Hospitality AI
+                { name: "Hopper", ranking: { market: 4, ux: 4, feature: 4 }, logo: "✈️", site: "https://hopper.com/", utility: ["Travel", "Hospitality", "Planning"], usedBy: ["Travelers", "Tourists"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "TripAdvisor", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🌍", site: "https://www.tripadvisor.com/TripNews-a64147-AI_on_Tripadvisor_Your_Personalized_Planning_Assistant_Is_Here.html", utility: ["Travel", "Hospitality", "Planning"], usedBy: ["Travelers", "Tourists"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+
+                // Group 24: Video & Audio AI Apps
+                { name: "Runway", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🎬", site: "https://runwayml.com/", utility: ["Video", "Audio", "Editing"], usedBy: ["Filmmakers", "Video Editors", "Content Creators"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"] },
+                { name: "ElevenLabs", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🎙️", site: "https://elevenlabs.io/", utility: ["Video", "Audio", "Voice Generation"], usedBy: ["Podcasters", "Video Creators", "Audiobook Producers"], courses: ["https://www.youtube.com/watch?v=vJ03a2rN2C0", "https://www.udemy.com/course/the-complete-ai-voice-generation-course-elevenlabs-and-others/", "https://www.youtube.com/watch?v=1oD0mHl2UuI", "https://www.youtube.com/watch?v=93T_t0e9_iM", "https://www.youtube.com/watch?v=U36t9o-WzDk"] },
+                { name: "Synthesia", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🗣️", site: "https://www.synthesia.io/", utility: ["Video", "Audio", "Generative Video"], usedBy: ["Corporate Trainers", "Marketers", "Content Creators"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Suno", ranking: { market: 4, ux: 5, feature: 4 }, logo: "🎵", site: "https://www.suno.ai/", utility: ["Video", "Audio", "Music Generation"], usedBy: ["Musicians", "Content Creators", "Audio Producers"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+
+                // Group 25: Multi-Agent AI Frameworks & Orchestration
+                { name: "LangChain", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🔗", site: "https://www.langchain.com/", utility: ["Multi-Agent", "Framework", "Development"], usedBy: ["AI Developers", "Startups"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "CrewAI", ranking: { market: 4, ux: 5, feature: 5 }, logo: "🤝", site: "https://www.crewai.com/", utility: ["Multi-Agent", "Framework", "Collaboration"], usedBy: ["AI Developers", "Teams"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "AutoGen", ranking: { market: 4, ux: 4, feature: 5 }, logo: "🤖", site: "https://microsoft.github.io/autogen/", utility: ["Multi-Agent", "Framework", "Automation"], usedBy: ["AI Researchers", "Developers"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
             ];
 
-            const container = document.getElementById('ai-tools-container');
-            const searchInput = document.getElementById('search-input');
-            const utilitySelect = document.getElementById('utility-select');
-            const nameSelect = document.getElementById('name-select');
+            const appContainer = document.getElementById('appContainer');
+            const searchInput = document.getElementById('searchInput');
+            const utilityFilter = document.getElementById('utilityFilter');
+            const appFilter = document.getElementById('appFilter');
 
-            // Function to create a star rating
-            function createStars(rating) {
-                let stars = '';
-                for (let i = 0; i < 5; i++) {
-                    if (i < rating) {
-                        stars += '⭐';
-                    } else {
-                        stars += '☆';
-                    }
-                }
-                return stars;
-            }
+            let allUtilities = new Set();
+            let allAppNames = new Set();
 
-            // Function to render the AI tool cards
-            function renderTools(tools) {
-                container.innerHTML = ''; // Clear previous cards
-                if (tools.length === 0) {
-                    container.innerHTML = `<p class="text-center col-span-full text-gray-500">No results found. Please try a different search or filter.</p>`;
-                    return;
-                }
-                tools.forEach(tool => {
-                    const card = document.createElement('div');
-                    card.className = 'bg-white p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1';
-                    card.innerHTML = `
-                        <div class="flex items-center space-x-4 mb-4">
-                            <div class="text-3xl">${tool.logo}</div>
-                            <div>
-                                <h2 class="text-xl font-semibold">${tool.name}</h2>
-                                <div class="text-yellow-400">${createStars(tool.ranking)}</div>
-                            </div>
-                        </div>
-                        <div class="mb-4 text-gray-700">
-                            ${tool.utility.map(keyword => `<span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full mr-1 mb-1">${keyword}</span>`).join('')}
-                        </div>
-                        <a href="${tool.site}" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">
-                            Visit Site &rarr;
-                        </a>
-                    `;
-                    container.appendChild(card);
-                });
-            }
-
-            // Function to filter and render tools based on all inputs
-            function filterAndRenderTools() {
-                const searchTerm = searchInput.value.toLowerCase();
-                const selectedUtility = utilitySelect.value.toLowerCase();
-                const selectedName = nameSelect.value.toLowerCase();
-
-                const filteredTools = aiTools.filter(tool => {
-                    // Filter by search input
-                    const nameMatch = tool.name.toLowerCase().includes(searchTerm);
-                    const utilityMatch = tool.utility.some(keyword => keyword.toLowerCase().includes(searchTerm));
-                    const searchFilter = (searchTerm === '') || nameMatch || utilityMatch;
-
-                    // Filter by dropdown selections
-                    const utilityFilter = (selectedUtility === '') || tool.utility.map(u => u.toLowerCase()).includes(selectedUtility);
-                    const nameFilter = (selectedName === '') || tool.name.toLowerCase() === selectedName;
-
-                    return searchFilter && utilityFilter && nameFilter;
-                });
-
-                renderTools(filteredTools);
-            }
-
-            // Populate the dropdowns
-            function populateDropdowns() {
-                // Populate Utility Dropdown
-                const allUtilities = new Set();
-                aiTools.forEach(tool => {
-                    tool.utility.forEach(keyword => allUtilities.add(keyword));
-                });
-                const sortedUtilities = [...allUtilities].sort();
-                sortedUtilities.forEach(keyword => {
-                    const option = document.createElement('option');
-                    option.value = keyword.toLowerCase();
-                    option.textContent = keyword;
-                    utilitySelect.appendChild(option);
-                });
-
-                // Populate Name Dropdown
-                const allNames = new Set(aiTools.map(tool => tool.name));
-                const sortedNames = [...allNames].sort();
-                sortedNames.forEach(name => {
-                    const option = document.createElement('option');
-                    option.value = name.toLowerCase();
-                    option.textContent = name;
-                    nameSelect.appendChild(option);
-                });
-            }
-
-            // Add event listeners for filtering
-            searchInput.addEventListener('input', filterAndRenderTools);
-            utilitySelect.addEventListener('change', () => {
-                nameSelect.value = ''; // Clear other dropdown
-                filterAndRenderTools();
-            });
-            nameSelect.addEventListener('change', () => {
-                utilitySelect.value = ''; // Clear other dropdown
-                filterAndRenderTools();
+            // Populate sets for sorting and filtering
+            aiTools.forEach(tool => {
+                tool.utility.forEach(util => allUtilities.add(util));
+                allAppNames.add(tool.name);
             });
 
-            // Initial render and populate dropdowns
-            populateDropdowns();
+            // Sort tools alphabetically by name
             aiTools.sort((a, b) => a.name.localeCompare(b.name));
-            renderTools(aiTools);
+
+            const sortedUtilities = Array.from(allUtilities).sort();
+            const sortedAppNames = Array.from(allAppNames).sort();
+
+            sortedUtilities.forEach(util => {
+                const option = document.createElement('option');
+                option.value = util;
+                option.textContent = util;
+                utilityFilter.appendChild(option);
+            });
+
+            sortedAppNames.forEach(name => {
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = name;
+                appFilter.appendChild(option);
+            });
+
+            function renderApps(filteredApps) {
+                appContainer.innerHTML = '';
+                filteredApps.forEach(app => {
+                    const appCard = document.createElement('div');
+                    appCard.className = 'card bg-white rounded-lg shadow-md p-6 flex flex-col justify-between mb-4';
+                    
+                    let coursesHtml = '';
+                    if (app.courses && app.courses.length > 0) {
+                        coursesHtml = `<h4 class="mt-4 font-semibold text-gray-700">Free Learning Resources:</h4><ul class="text-sm text-blue-500 list-disc list-inside mt-2 space-y-1">${app.courses.map(link => {
+                            let linkIcon = '';
+                            if (link.includes('youtube.com')) {
+                                linkIcon = '▶️';
+                            } else if (link.includes('coursera.org')) {
+                                linkIcon = '🎓';
+                            } else if (link.includes('udemy.com')) {
+                                linkIcon = '📚';
+                            } else if (link.includes('edx.org')) {
+                                linkIcon = '🏫';
+                            } else if (link.includes('skillshare.com')) {
+                                linkIcon = '🎨';
+                            }
+                            return `<li><span class="mr-1">${linkIcon}</span><a href="${link}" target="_blank" class="hover:underline truncate">${link}</a></li>`;
+                        }).join('')}</ul>`;
+                    }
+                    
+                    let usedByHtml = '';
+                    if (app.usedBy && app.usedBy.length > 0) {
+                        usedByHtml = `
+                            <div class="mt-2 text-gray-600 text-sm">
+                                <p class="font-semibold mb-1">Used by:</p>
+                                <div class="flex flex-wrap gap-2">
+                                    ${app.usedBy.map(company => `<span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full">${company}</span>`).join('')}
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    appCard.innerHTML = `
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-4">${app.logo}</span>
+                                <h3 class="text-xl font-bold">${app.name}</h3>
+                            </div>
+                            <p class="text-gray-600 mb-2">
+                                <strong>Ranking:</strong> 
+                                Market: ${'⭐'.repeat(app.ranking.market)} 
+                                UX: ${'✨'.repeat(app.ranking.ux)} 
+                                Feature: ${'⚡'.repeat(app.ranking.feature)}
+                            </p>
+                            <p class="text-gray-600 mb-2"><strong>Utility:</strong> ${app.utility.join(', ')}</p>
+                            ${usedByHtml}
+                            ${coursesHtml}
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <a href="${app.site}" target="_blank" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
+                                Visit Site
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                    `;
+                    appContainer.appendChild(appCard);
+                });
+            }
+
+            function filterApps() {
+                const searchText = searchInput.value.toLowerCase();
+                const selectedUtility = utilityFilter.value;
+                const selectedApp = appFilter.value;
+
+                const filteredApps = aiTools.filter(app => {
+                    const matchesSearch = searchText === '' || 
+                                          app.name.toLowerCase().includes(searchText) || 
+                                          app.utility.some(util => util.toLowerCase().includes(searchText)) || 
+                                          (app.usedBy && app.usedBy.some(org => org.toLowerCase().includes(searchText))) ||
+                                          (app.ranking && (app.ranking.market.toString().includes(searchText) || app.ranking.ux.toString().includes(searchText) || app.ranking.feature.toString().includes(searchText)));
+
+                    const matchesUtility = selectedUtility === '' || app.utility.includes(selectedUtility);
+                    const matchesApp = selectedApp === '' || app.name === selectedApp;
+
+                    return matchesSearch && matchesUtility && matchesApp;
+                });
+                renderApps(filteredApps);
+            }
+
+            searchInput.addEventListener('input', () => {
+                utilityFilter.value = '';
+                appFilter.value = '';
+                filterApps();
+            });
+            utilityFilter.addEventListener('change', () => {
+                searchInput.value = '';
+                appFilter.value = '';
+                filterApps();
+            });
+            appFilter.addEventListener('change', () => {
+                searchInput.value = '';
+                utilityFilter.value = '';
+                filterApps();
+            });
+
+            filterApps(); // Initial render
         });
     </script>
-
 </body>
 </html>

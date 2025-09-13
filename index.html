@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; padding-bottom: 6rem; }
         .card { transition: transform 0.2s; }
         .card:hover { transform: translateY(-5px); }
         .grid-container {
@@ -34,6 +34,13 @@
             margin-right: 0.25rem;
             border-radius: 50%;
         }
+        .fixed-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body class="bg-gray-100 p-6 sm:p-10 text-gray-800">
@@ -47,6 +54,11 @@
                 <p>Index file last updated: Monday, September 10, 2025.</p>
                 <div class="h-4"></div>
                 <p class="text-yellow-300 font-bold text-base sm:text-lg">Dr. SSN Raju, <a href="mailto:drssnraju@gmail.com" class="text-yellow-300 hover:underline">drssnraju@gmail.com</a>, WhatsApp +91 9391101403</p>
+                <p class="mt-2 text-yellow-300 font-bold text-base sm:text-lg">
+                    <a href="https://drssnraju-consultant.github.io/resume" target="_blank" class="text-yellow-300 hover:underline">
+                        <span class="mr-1">🔗</span>Explore My Experience
+                    </a>
+                </p>
             </div>
         </div>
 
@@ -100,6 +112,13 @@
             </div>
         </div>
 
+        <!-- Utility App Groups Banner -->
+        <div class="bg-gradient-to-r from-teal-500 to-green-600 text-white p-6 rounded-lg shadow-lg text-center mb-8">
+            <a href="https://drssnraju.my.canva.site/ai-universe" target="_blank" class="text-white hover:underline font-extrabold text-2xl sm:text-3xl">
+                <span class="mr-2">🔗</span>AI Utility App Groups Directory for exploring
+            </a>
+        </div>
+
         <!-- Ranking Explanation -->
         <div class="bg-gray-200 p-4 sm:p-6 rounded-lg shadow-md text-center mb-8">
             <h3 class="text-lg font-semibold text-gray-800 mb-2">Our Ranking Methodology</h3>
@@ -127,9 +146,14 @@
             <!-- App cards will be dynamically inserted here -->
         </div>
 
-        <!-- Footer Banner -->
-        <div class="mt-12 text-center bg-gray-200 p-6 rounded-lg shadow-md text-gray-600">
-            <p class="text-sm sm:text-base font-light">"Your compass in the ever-expanding universe of AI."</p>
+        <!-- Sticky Footer Banner -->
+        <div class="fixed-footer bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-4 text-center shadow-lg">
+            <p class="text-xs sm:text-sm">Dr. SSN Raju, <a href="mailto:drssnraju@gmail.com" class="text-white hover:underline">drssnraju@gmail.com</a>, WhatsApp +91 9391101403</p>
+            <p class="mt-2 text-yellow-300 font-bold text-base sm:text-lg">
+                <a href="https://drssnraju-consultant.github.io/resume" target="_blank" class="text-yellow-300 hover:underline">
+                    <span class="mr-1">🔗</span>Explore My Experience
+                </a>
+            </p>
         </div>
     </div>
 
@@ -145,20 +169,20 @@
                 // Group 2: Business & Marketing AI Apps
                 { name: "Jasper", ranking: { market: 5, ux: 5, feature: 5 }, logo: "✍️", site: "https://www.jasper.ai/", utility: ["Marketing", "Copywriting", "Content Creation"], usedBy: ["IBM", "Airbnb", "HubSpot"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
                 { name: "Semrush", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📈", site: "https://www.semrush.com/", utility: ["Marketing", "SEO", "Analytics"], usedBy: ["Tesla", "Booking.com", "Forbes"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
-                { name: "Grammarly", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📝", site: "https://www.grammarly.com/", utility: ["Writing", "Editing", "Productivity"], usedBy: ["Dell", "Figma", "Zoom"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Grammarly", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📝", site: "https://www.grammarly.com/", utility: ["Writing", "Editing", "Productivity"], usedBy: ["Dell", "Figma", "Zoom"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/ai-for-everyone"]},
                 { name: "HubSpot AI", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🧲", site: "https://www.hubspot.com/ai", utility: ["Marketing", "Sales", "Business"], usedBy: ["Shopify", "Monday.com", "Miro"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
                 { name: "Optimove", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🎯", site: "https://www.optimove.com/", utility: ["Marketing", "Personalization", "Business"], usedBy: ["BetMGM", "Macy's", "Staples"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
 
                 // Group 3: Coding & Development AI Tools
                 { name: "GitHub Copilot", ranking: { market: 5, ux: 5, feature: 5 }, logo: "💻", site: "https://github.com/features/copilot", utility: ["Coding", "Development", "Productivity"], usedBy: ["Duolingo", "Shopify", "Stripe"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
                 { name: "Replit", ranking: { market: 4, ux: 4, feature: 4 }, logo: "🌐", site: "https://replit.com/", utility: ["Coding", "Development", "Education"], usedBy: ["Students", "Startups"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
-                { name: "Tabnine", ranking: { market: 4, ux: 4, feature: 4 }, logo: "⌨️", site: "https://www.tabnine.com/", utility: ["Coding", "Development", "Productivity"], usedBy: ["Amazon", "Cisco", "HP"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Tabnine", ranking: { market: 4, ux: 4, feature: 4 }, logo: "⌨️", site: "https://www.tabnine.com/", utility: ["Coding", "Development", "Productivity"], usedBy: ["Amazon", "Cisco", "HP"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
                 { name: "Amazon Q Developer", ranking: { market: 4, ux: 4, feature: 5 }, logo: "☁️", site: "https://aws.amazon.com/q/", utility: ["Coding", "Development", "Cloud"], usedBy: ["AWS Developers", "NVIDIA", "Accenture"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
 
                 // Group 4: Creative Writing & Storytelling AI Apps
                 { name: "Sudowrite", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📖", site: "https://www.sudowrite.com/", utility: ["Creative Writing", "Storytelling", "Writing"], usedBy: ["Authors", "Creative Writers"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
                 { name: "ChatGPT", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🤖", site: "https://chat.openai.com/", utility: ["Creative Writing", "Chatbot", "General"], usedBy: ["NASA", "Morgan Stanley", "Students", "Everyone"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
-                { name: "Claude", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📜", site: "https://claude.ai/", utility: ["Creative Writing", "Chatbot", "General"], usedBy: ["Quora", "The Economist", "Airtable"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Claude", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📜", site: "https://claude.ai/", utility: ["Creative Writing", "Chatbot", "General"], usedBy: ["Quora", "The Economist", "Airtable"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
                 { name: "Jasper", ranking: { market: 5, ux: 5, feature: 5 }, logo: "✍️", site: "https://www.jasper.ai/", utility: ["Creative Writing", "Writing", "Content Creation"], usedBy: ["IBM", "Airbnb", "HubSpot"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
 
                 // Group 5: Customer Support & Service AI
@@ -222,7 +246,7 @@
 
                 // Group 18: Personal Companions & Lifestyle AI
                 { name: "Replika", ranking: { market: 4, ux: 4, feature: 4 }, logo: "👫", site: "https://replika.com/", utility: ["Personal", "Lifestyle", "Chatbot"], usedBy: ["Individual Users"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
-                { name: "Wysa", ranking: { market: 4, ux: 5, feature: 5 }, logo: "🧘", site: "https://www.wysa.com/", utility: ["Personal", "Lifestyle", "Wellness"], usedBy: ["Individuals", "Mental Health Professionals"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
+                { name: "Wysa", ranking: { market: 4, ux: 5, feature: 5 }, logo: "🧘", site: "https://www.wysa.com/", utility: ["Healthcare", "Wellness", "Therapy"], usedBy: ["Individuals", "Mental Health Professionals"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
 
                 // Group 19: Productivity & Workflow AI Apps
                 { name: "Notion AI", ranking: { market: 5, ux: 5, feature: 5 }, logo: "🧠", site: "https://www.notion.so/product/ai", utility: ["Productivity", "Workflow", "Organization"], usedBy: ["Students", "Remote Teams", "Startups"], courses: ["https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/introduction-to-ai", "https://www.youtube.com/watch?v=F_Yq_yS_gYc"]},
@@ -241,7 +265,7 @@
                 // Group 22: Text & Writing AI Apps
                 { name: "ChatGPT", ranking: { market: 5, ux: 5, feature: 5 }, logo: "💬", site: "https://chat.openai.com/", utility: ["Writing", "Text", "Chatbot"], usedBy: ["NASA", "Morgan Stanley", "Students", "Everyone"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
                 { name: "Claude", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📜", site: "https://claude.ai/", utility: ["Writing", "Text", "Chatbot"], usedBy: ["Quora", "The Economist", "Airtable"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
-                { name: "Grammarly", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📝", site: "https://www.grammarly.com/", utility: ["Writing", "Text", "Editing"], usedBy: ["Dell", "Figma", "Zoom"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
+                { name: "Grammarly", ranking: { market: 5, ux: 5, feature: 5 }, logo: "📝", site: "https://www.grammarly.com/", utility: ["Writing", "Text", "Editing"], usedBy: ["Dell", "Figma", "Zoom"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.coursera.org/learn/ai-for-everyone"]},
                 { name: "Gemini", ranking: { market: 5, ux: 5, feature: 5 }, logo: "♊", site: "https://gemini.google.com/", utility: ["Writing", "Text", "Research"], usedBy: ["Google Workspace Users", "Students"], courses: ["https://www.youtube.com/watch?v=F_Yq_yS_gYc", "https://www.coursera.org/learn/introduction-to-ai", "https://www.udemy.com/course/generative-ai-full-course/", "https://www.youtube.com/watch?v=nJ25yl34Uqw", "https://www.coursera.org/learn/ai-for-everyone"]},
 
                 // Group 23: Travel & Hospitality AI
